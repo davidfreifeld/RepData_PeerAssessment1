@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -47,7 +52,7 @@ Now we plot a histogram of it:
 hist(dailySteps, main="Total Steps Taken per Day", xlab="Steps")
 ```
 
-![](PA1_template_files/figure-html/histogram-1.png) 
+![plot of chunk histogram](figure/histogram-1.png) 
 
 ## What is the average daily activity pattern?
 
@@ -61,7 +66,7 @@ plot(intervals, avgSteps, type="l", main="Average Steps Taken During The Day",
      xlab="Time Interval", ylab="Average Number of Steps")
 ```
 
-![](PA1_template_files/figure-html/timeseries-1.png) 
+![plot of chunk timeseries](figure/timeseries-1.png) 
 
 We can see which interval, on average, contained the most steps taken:
 
@@ -128,7 +133,7 @@ hist(dailySteps_imputed,
      main="Total Steps Taken per Day (with Imputed Values)", xlab="Steps")
 ```
 
-![](PA1_template_files/figure-html/histogram2-1.png) 
+![plot of chunk histogram2](figure/histogram2-1.png) 
 
 We notice that, as expected, the mean remains unchanged. However, because we used the mean of each interval as our imputed values, the median is now equal to the mean.
 
@@ -166,4 +171,4 @@ df$avgs <- c(weekendAvgs, weekdayAvgs)
 xyplot(avgs ~  interval | dayofweek, data = df, layout = c(1,2), type="l", ylab="Number of steps")
 ```
 
-![](PA1_template_files/figure-html/panelplot-1.png) 
+![plot of chunk panelplot](figure/panelplot-1.png) 
